@@ -17,12 +17,12 @@ end
 function rowMean(data, nbCol, offset)
     for i = 1:size(data, 1)
         sum = 0
-        for k = 1:nbCol
+        for j = 1:nbCol
             if data[i,j + offset] !== missing
                 sum = sum + data[i,j + offset]
             end
         end
-        for k = 1:nbCol
+        for j = 1:nbCol
             if data[i,j + offset] === missing
                 data[i,j + offset] = floor(sum/5)
             end
